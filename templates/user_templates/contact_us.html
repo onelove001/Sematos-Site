@@ -1,0 +1,155 @@
+{% extends 'user_templates/base.html' %}
+{% load static %}
+
+{% block title %} Contact Us {% endblock title %}
+
+
+{% block content %}
+
+	<!-- sub-header starts here  -->
+	<section class="sub-header">
+		<nav>
+			<a href="">
+				<img src="{% static 'assets/images/avatar/admin-logo.png' %}" alt="Logo">
+			</a>
+
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li>
+						<a href="{% url 'home-page' %}">Home</a>
+					</li>
+					<li>
+						<a href="{% url 'about-us' %}">About</a>
+					</li>
+					<li>
+						<a href="{% url 'our-services' %}">Services</a>
+					</li>
+					<li>
+						<a href="{% url 'contact-us' %}">Contact</a>
+					</li>
+				</ul>
+			</div> 
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+
+		<h1> Contact Us Now! </h1>
+	</section>
+
+
+	<!-- Location starts here -->
+	<section class="location">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.8236269517356!2d5.16104051434994!3d7.26090399475891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10478f3e28846ef9%3A0x5b7ce3a150e75e46!2sIworokogbasa%20St%2C%20340110%2C%20Akure!5e0!3m2!1sen!2sng!4v1631951397898!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	</section>
+
+
+	<!-- Query by messaging starts here  -->
+	<section class="contact-us">
+		<div class="row">
+			<div class="contact-col">
+				<div>
+					<i class="fa fa-home"></i>
+					<span>
+						<h5> {{ contacct.address}}</h5>
+						<p>Ondo State.</p>
+					</span>
+				</div>
+				<div>
+					<i class="fa fa-phone"></i>
+					<span>
+						<h5> {{ contacct.phone_no}}</h5>
+						<p>Monday to Satuday, 6AM to 9PM</p>
+					</span>
+				</div>
+				<div>
+					<i class="fa fa-envelope-o"></i>
+					<span>
+						<h5> {{ contacct.email}}</h5>
+						<p>Email us your query</p>
+					</span>
+				</div>
+			</div>
+
+			<div class="contact-col"> 
+				<form action="{% url 'lead-gen-save' %}" method="POST"> {% csrf_token %}
+					<input type="text" name = "full_name" placeholder="Enter your full name" required>
+					<input type="email" name = "email" placeholder="Enter email address" required>
+					<input type="text" name = "phone_no" placeholder="Enter cell digits" required>
+					<input type="text" name = "subject" placeholder="Message Subject" required>
+					<textarea name = "message_body" rows="8" placeholder="Message Text"></textarea>
+					<button class="hero-btn red-btn" type="submit">Send Message</button>
+
+					{% if messages %}
+					<div class = "row">
+						<div class = "col-xl-12">
+							{% for message in messages %}
+								{% if message.tags == 'error' %}
+									<div class = "alert alert-danger mt-4 ml-3 text-dark" style = "color:rgb(209, 21, 0); width:100%;">
+										{{message}}
+									</div>
+								{% endif %}
+								{% if message.tags == 'success' %}
+									<div class = "alert alert-success ml-3 mt-4 text-dark" style = "color:rgb(0, 146, 0); width:100%;">
+										{{message}}
+									</div>
+								{% endif %}
+							{%endfor %}
+						</div>
+					</div>	              
+					{% endif %}	  
+				</form>				
+			</div>
+		</div>
+	</section>
+
+
+	<!-- About The Company -->
+	<section class="service">
+		<h1><marquee>We are exceptional in what we do! </marquee></h1>
+		<h4>Sematos is a Nigerian based company which deals in various and different service rendering. Oil and Gas, Automobiles, Real Estate. 
+			etc. we offer the best sales and are concerned with giving the best service to our customers.
+		</h4>
+
+		<div class="row">
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/oil-and-gas.jpg' %}">
+				<h3>Dealer of Oil and Natural Gas</h3>
+				<p style = "text-align: justify;"> Our database comprises of more than 7,000 tank storage facilities worldwide; such as tank terminals, petroleum refineries, 
+					crude petroleum export terminals, chemical sites, olefin plants.
+			</div>
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/building-contractor.jpg' %}">
+				<h3>Building Contractor & Estate Agent</h3>
+				<p style = "text-align: justify;">Semato's participating real estate agents are local to your area and from the top-notch brokerages 
+					that make up Realogy’s residential real estate brands, such as Better Homes and Gardens© Real Estate, CENTURY 21©, 
+					Coldwell Banker©, Corcoran©, ERA©, and Sotheby’s International Realty
+				</p>
+			</div>
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/automobile.jpg' %}">
+				<h3>Dealer of Automobile</h3>
+				<p style = "text-align: justify;"> We spread good carma to make a positive impact on the lives of our customers, colleagues, and also the wider community. 
+					CarShop Cares is our dedicated charity programme that works closely with the nice people at Global's Make Some Noise, 
+					supporting children and young people in areas throughout the Nigeria.</p>
+			</div>	
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/general-supply.png' %}">
+				<h3>General Supply</h3>
+				<p style = "text-align: justify;"> We at sematos is involved in many service rendering and procuring ranging from selling and buying of goods and products 
+					and also improvment of people's business in all ways
+				</p>
+			</div>
+		</div>
+		
+	</section>
+	<!-- End About the Company -->
+
+
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %}

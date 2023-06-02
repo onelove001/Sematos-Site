@@ -1,0 +1,63 @@
+﻿{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+	
+		<title> SeMaToS | {% block title %} {% endblock title %} </title>
+
+		<link rel="icon" href="https://lawfirm-admin-template.multipurposethemes.com/images/favicon.ico">
+		<!-- Vendors Style-->
+		<link rel="stylesheet" href="{% static 'admin_assets/css/vendors_css.css' %}">
+		
+		<!-- Style-->  
+		<link rel="stylesheet" href="{% static 'admin_assets/css/style.css' %}">
+		<link rel="stylesheet" href="{% static 'admin_assets/skin_color.css' %}">	
+		<link rel="icon" href="{% static 'favicons/favicon.ico'  %}">
+
+	</head>	
+
+	<body class="hold-transition light-skin sidebar-mini theme-primary fixed">
+		
+		<div class="wrapper">
+			<div id="loader"> </div>
+
+			{% include 'admin_templates/main_header.html' %}
+
+			{% include 'admin_templates/side_bar.html'%}
+
+			{% block content %}
+
+			{% endblock content %}
+
+			{% include 'admin_templates/footer.html' %}
+
+		</div>
+		<!-- ./wrapper end -->
+
+
+		<!-- Vendor JS -->
+		<script src="{% static 'admin_assets/js/vendors.min.js' %}"></script>
+		<script src="{% static 'admin_assets/js/pages/chat-popup.js' %}"></script>
+		<script src="{% static 'admin_assets/assets/icons/feather-icons/feather.min.js' %}"></script>	
+		<script src="{% static 'assets/vendor_components/datatable/datatables.min.js' %}"></script>
+		<script src="{% static 'assets/vendor_components/apexcharts-bundle/dist/apexcharts.js' %}"></script>
+		
+		<!-- Law Firm App -->
+		<script src="{% static 'admin_assets/js/template.js' %}"></script>
+		<script src="{% static 'admin_assets/js/pages/dashboard.js' %}"></script>
+		<script src="{% static 'admin_assets/js/pages/data-table.js' %}"></script>
+		
+	</body>
+
+</html>
+
+

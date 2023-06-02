@@ -1,0 +1,51 @@
+{% load static %}
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+</head>
+<!-- Header starts here -->
+<section class="header">
+    <nav>
+        <a href="">
+            <img src="{% static 'assets/images/avatar/admin-logo.png' %}" alt="Logo">
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li>
+                    <a href="{% url 'home-page' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'about-us' %}">About</a>
+                </li>
+                <li>
+                    <a href="{% url 'our-services' %}">Services</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact-us' %}">Contact</a>
+                </li>
+                <li>
+                    <a href="{% url 'login-admin' %}">Admin <i class = "fas fa user-lock"> </i></a>
+                </li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box wow">
+        <div id="typed-strings">
+          <h1>Sematos Nigeria Limited</h1>
+          <h1>Nigeria Leading General Contractors</h1>
+        </div>
+
+        <span id="typed"></span>
+
+        <p>A Company, whose main goal is to satisfy customers with optimum service rendering  </p>
+        <a href="{% url 'about-us' %}" class="hero-btn">Learn More</a>
+    </div>
+</section>

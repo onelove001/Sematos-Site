@@ -1,0 +1,158 @@
+{% extends 'user_templates/base.html' %}
+{% load static %}
+
+{% block title %} BIO {% endblock title %}
+
+
+{% block content %}
+
+	<!-- sub-header starts here  -->
+	<section class="sub-header">
+		<nav>
+			<a href="">
+				<img src="{% static 'assets/images/avatar/admin-logo.png' %}" alt="Logo">
+			</a>
+
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li>
+						<a href="{% url 'home-page' %}">Home</a>
+					</li>
+					<li>
+						<a href="{% url 'about-us' %}">About</a>
+					</li>
+					<li>
+						<a href="{% url 'our-services' %}">Services</a>
+					</li>
+					<li>
+						<a href="{% url 'contact-us' %}">Contact</a>
+					</li>
+				</ul>
+			</div> 
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+
+		<h1>About SeMaTos</h1>
+	</section>
+
+<!-- Best company starts here  -->
+	<section class="about-us">
+		<div class="row">
+			<div class="about-col">
+				<h1>We are the best Company in nigeria</h1>
+				<p style = "text-align: justify;">	Sematos is a Nigerian based company which deals in various and different service rendering. Oil and Gas, Automobiles, Real Estate. etc. 
+					we offer the best sales and are concerned with giving the best service to our customers. At sematos, we believe in home and properties 
+					ownership for all. To help you achieve that dream, we’re working towards fixing the outdated processes within the industry that get in the way of ownership – such as uncertainty around selling, 
+					contract cancellations, and rigid timelines. consider us the best at what we do</p>
+				<a href="./" class="hero-btn red-btn">EXPLORE NOW</a>
+			</div>
+			<div class="about-col">
+				<img src="{% static 'assets/img/cta_background.jpg' %}">
+			</div>
+		</div>
+	</section>
+
+	<!-- About The Company -->
+	<section class="service">
+		<h1>Who we are?</h1>
+		<p> </p>
+		<h4>Sematos is a Nigerian based company which deals in various and different service rendering. Oil and Gas, Automobiles, Real Estate. etc. 
+			we offer the best sales and are concerned with giving the best service to our customers.
+		</h4>
+		<div>
+			<div class = "row"> </div>
+			<div class="service-col">
+				<h3>Our Mission</h3>
+				<p> {{ aboutt.our_mission }} </p>
+			</div>
+		</div>
+
+		<div>
+			<div class="service-col">
+				<h3>Our Vision</h3>
+				<p> {{ aboutt.our_vision }} </p>
+			</div>
+		</div>
+
+		<div>
+			<div class="service-col">
+				<h3>Core Values</h3>
+				<p> {{ aboutt.core_values }} </p>
+			</div>
+		</div>
+	</section>
+	<!-- End About the Company -->
+
+
+	<!-- Case Study Starts Here -->
+	<section class="about">
+		<h1> We Are Here For You</h1>
+		
+		<div class="row">
+
+			<div class="about-col">
+				<img src="{% static 'assets/images/avatar/pic9.jpeg' %}">
+				<div class="layer">
+					<h3>Trailers</h3>
+				</div>
+			</div>
+			<div class="about-col">
+				<img src="{% static 'assets/images/avatar/pic7.jpeg' %}">
+				<div class="layer">
+					<h3> Benz Varieties </h3>
+				</div>
+			</div>
+			<div class="about-col">
+				<img src="{% static 'assets/images/avatar/pic6.jpeg' %}">
+				<div class="layer">
+					<h3>Hiace Buses</h3>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/oil-and-gas.jpg' %}">
+				<h3>Dealer of Oil and Natural Gas</h3>
+				<p style = "text-align: justify;"> Our database comprises of more than 7,000 tank storage facilities worldwide; such as tank terminals, petroleum refineries, 
+					crude petroleum export terminals, chemical sites, olefin plants.
+			</div>
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/building-contractor.jpg' %}">
+				<h3>Building Contractor & Estate Agent</h3>
+				<p style = "text-align: justify;">Semato's participating real estate agents are local to your area and from the top-notch brokerages 
+					that make up Realogy’s residential real estate brands, such as Better Homes and Gardens© Real Estate, CENTURY 21©, 
+					Coldwell Banker©, Corcoran©, ERA©, and Sotheby’s International Realty
+				</p>
+			</div>
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/automobile.jpg' %}">
+				<h3>Dealer of Automobile</h3>
+				<p style = "text-align: justify;"> We spread good carma to make a positive impact on the lives of our customers, colleagues, and also the wider community. 
+					CarShop Cares is our dedicated charity programme that works closely with the nice people at Global's Make Some Noise, 
+					supporting children and young people in areas throughout the Nigeria.</p>
+			</div>	
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/general-supply.png' %}">
+				<h3>General Supply</h3>
+				<p style = "text-align: justify;"> We at sematos is involved in many service rendering and procuring ranging from selling and buying of goods and products 
+					and also improvment of people's business in all ways
+				</p>
+			</div>
+		</div>
+		
+	</section>
+
+
+{% endblock content %}
+
+
+
+{% block scripts %}
+
+{% endblock scripts %}

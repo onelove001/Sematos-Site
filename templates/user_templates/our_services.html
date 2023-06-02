@@ -1,0 +1,108 @@
+{% extends 'user_templates/base.html' %}
+{% load static %}
+
+{% block title %} Services {% endblock title %}
+
+
+{% block content %}
+
+	<!-- sub-header starts here  -->
+	<section class="sub-header">
+		<nav>
+			<a href="">
+				<img src="{% static 'assets/images/avatar/admin-logo.png' %}" alt="Logo">
+			</a>
+
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li>
+						<a href="{% url 'home-page' %}">Home</a>
+					</li>
+					<li>
+						<a href="{% url 'about-us' %}">About</a>
+					</li>
+					<li>
+						<a href="{% url 'our-services' %}">Services</a>
+					</li>
+					<li>
+						<a href="{% url 'contact-us' %}">Contact</a>
+					</li>
+				</ul>
+			</div> 
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+
+		<h1>What we do</h1>
+	</section>
+
+	<!-- Company Services Starts Here -->
+	<section class="case-study">
+		<h1>What we do?</h1>
+		<p>We provide detailed terminal data you need to make smart business decisions</p>
+
+		<div class="row">
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/oil-and-gas.jpg' %}">
+				<h3>Dealer of Oil and Natural Gas</h3>
+				<p style = "text-align: justify;"> Our database comprises of more than 7,000 tank storage facilities worldwide; such as tank terminals, petroleum refineries, 
+					crude petroleum export terminals, chemical sites, olefin plants.
+			</div>
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/building-contractor.jpg' %}">
+				<h3>Building Contractor & Estate Agent</h3>
+				<p style = "text-align: justify;">Semato's participating real estate agents are local to your area and from the top-notch brokerages 
+					that make up Realogy’s residential real estate brands, such as Better Homes and Gardens© Real Estate, CENTURY 21©, 
+					Coldwell Banker©, Corcoran©, ERA©, and Sotheby’s International Realty
+				</p>
+			</div>
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/automobile.jpg' %}">
+				<h3>Dealer of Automobile</h3>
+				<p style = "text-align: justify;"> We spread good carma to make a positive impact on the lives of our customers, colleagues, and also the wider community. 
+					CarShop Cares is our dedicated charity programme that works closely with the nice people at Global's Make Some Noise, 
+					supporting children and young people in areas throughout the Nigeria.</p>
+			</div>	
+
+			<div class="case-study-col">
+				<img src="{% static 'assets/img/general-supply.png' %}">
+				<h3>General Supply</h3>
+				<p style = "text-align: justify;"> We at sematos is involved in many service rendering and procuring ranging from selling and buying of goods and products 
+					and also improvment of people's business in all ways
+				</p>
+			</div>
+		</div>
+
+	</section>
+
+	<section class="about">
+		<div class="row">
+			<div class="about-col">
+				<img src="{% static 'assets/images/avatar/pic8.jpeg' %}">
+				<div class="layer">
+					<h3>Jeep</h3>
+				</div>
+			</div>
+			<div class="about-col">
+				<img src="{% static 'assets/images/avatar/pic9.jpeg' %}">
+				<div class="layer">
+					<h3>Sport Cars</h3>
+				</div>
+			</div>
+			<div class="about-col">
+				<img src="{% static 'assets/images/avatar/pic10.jpeg' %}">
+				<div class="layer">
+					<h3>Automobiles</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}
+
+
+{% block scripts %}
+
+{% endblock scripts %}

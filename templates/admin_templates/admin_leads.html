@@ -1,0 +1,80 @@
+{% extends 'admin_templates/base.html' %}
+
+{% load static %}
+
+
+{% block title %} Admin - Leads {% endblock title %}
+
+
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+	  <div class="container-full">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="d-flex align-items-center">
+				<div class="me-auto">
+					<h4 class="page-title">Sematos Nigeria Limited</h4>
+					<div class="d-inline-block align-items-center">
+						<nav>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+								<li class="breadcrumb-item" aria-current="page">Leads Box</li>
+								<li class="breadcrumb-item active" aria-current="page">All Leads</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<!-- Main content -->
+		<section class="content">
+
+		  <div class="row">
+			  <div class="col-12">
+				<div class="box">
+				  <div class="box-body">
+					<div class="table-responsive">
+						<table id="productorder" class="table table-hover no-wrap product-order" data-page-size="10">
+							<thead>
+								<tr>
+									<th>S/N</th>
+									<th>Full Name</th>
+									<th>Email Address</th>
+									<th>Phone Number</th>
+									<th>Time-Stamp</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									{% for lead in leads %}
+									<td>{{lead.id}}</td>
+									<td>{{lead.full_name}}</td>
+									<td>{{lead.email}}</td>
+									<td>{{lead.phone_no}}</td>
+									<td>{{lead.timestamp}}</td>
+									{% endfor %}
+								</tr>
+							</tbody>						
+						</table>
+					</div>
+				  </div>
+				</div>
+			  </div>		  
+		  </div>
+
+		</section>
+		<!-- /.content -->
+	  </div>
+  </div>
+  <!-- /.content-wrapper -->
+ 
+{% endblock content %}
+
+
+{% block scripts %}
+
+{% endblock scripts %}

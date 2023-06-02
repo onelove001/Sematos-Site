@@ -1,0 +1,42 @@
+{% load static %}
+
+<!-- main header starts here  -->
+<header class="main-header">
+
+    <div class="d-flex align-items-center logo-box justify-content-start">	
+        <!-- Logo -->
+        <a href="{% url 'admin-dashboard' %}" class="logo">
+            <!-- logo-->
+            <div class="logo-mini w-50">
+                <span class="light-logo"><img src="{% static 'assets/images/avatar/admin-logo.png' %}" alt="logo"></span>
+            </div>
+        </a>	
+    </div>  
+
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <div class="app-menu">
+            <ul class="header-megamenu nav">
+                <li class="btn-group nav-item">
+                    <a href="#" class="waves-effect waves-light nav-link push-btn btn-primary-light" data-toggle="push-menu" role="button">
+                        <i class="icon-Menu"><span class="path1"></span><span class="path2"></span></i>
+                    </a>
+                </li>
+            </ul> 
+        </div>
+        
+        <div class="navbar-custom-menu r-side">
+            
+            <ul class="nav navbar-nav">			
+                <li class="btn-group nav-item d-lg-inline-flex d-none">
+                    <a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link full-screen btn-primary-light" title="Full Screen">
+                        <i class="icon-Position"></i>
+                    </a>
+                </li>		  
+            </ul>
+        </div>
+    </nav>
+
+</header>

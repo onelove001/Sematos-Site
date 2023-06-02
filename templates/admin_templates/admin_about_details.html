@@ -1,0 +1,134 @@
+{% extends 'admin_templates/base.html' %}
+
+{% load static %}
+
+
+{% block title %} Admin - Bio {% endblock title %}
+
+
+{% block content %}
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+	  <div class="container-full">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<div class="d-flex align-items-center">
+				<div class="me-auto">
+					<h4 class="page-title">Edit</h4>
+					<div class="d-inline-block align-items-center">
+						<nav>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+								<li class="breadcrumb-item" aria-current="page">Sematos BIO Details</li>
+								<li class="breadcrumb-item active" aria-current="page">Update</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<!-- Main content -->
+		<section class="content">
+
+			<div class="row">
+			  <div class="col-12">
+				<div class="box">
+					<div class="box-header with-border">
+					  <h4 class="box-title">About SeMaToS</h4>
+					</div>
+				  <div class="box-body">
+					<form action="{% url 'admin-about-save' %}" method = "POST"> {% csrf_token %}
+						<div class="form-body">
+							<!--/row-->
+							<div class="row">
+								
+								<div class="col-md-12">
+									<div class="form-group">
+									  <label class="fw-700 fs-16 form-label">Company's Name</label>
+									  <input type="text" disabled name = "name" class="form-control" value = "{{company.name}} Nigeria Limited">
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="fw-700 fs-16 form-label">Brief Description</label>
+										<textarea class="form-control p-15" rows="4" name = "brief_description" placeholder="Brief Description"> {{about.brief_description}} </textarea>
+									</div>
+								</div>							
+								
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="fw-700 fs-16 form-label">About Us</label>
+										<textarea class="form-control p-15" rows="4" name = "about_us" placeholder="About the company"> {{about.about_us}} </textarea>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="fw-700 fs-16 form-label">Our Mission</label>
+										<textarea class="form-control p-15" rows="4" name = "our_mission" placeholder="Our Mission">{{about.our_mission}}</textarea>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="fw-700 fs-16 form-label">Core Values</label>
+										<textarea class="form-control p-15" rows="4" name = "core_values" placeholder="Our Core Values">{{about.core_values}}</textarea>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="form-group">
+										<label class="fw-700 fs-16 form-label">Our Vision</label>
+										<textarea class="form-control p-15" rows="4" name = "our_vision" placeholder="Our Vision"> {{about.our_vision}} </textarea>
+									</div>
+								</div>
+
+							</div>
+							<!--/row-->
+						</div>
+						<div class="form-actions mt-10">
+							<button type="submit" class="btn btn-primary"> <i class="fa fa-check"></i>Save</button>
+							<a href="{% url 'admin-dashboard' %}" type="button" class="btn btn-danger">Cancel</a>
+						</div>
+						{% if messages %}
+						<div class = "row">
+							<div class = "col-xl-12">
+								{% for message in messages %}
+									{% if message.tags == 'error' %}
+										<div class = "alert alert-danger mt-4 ml-3 text-dark" style = "color:rgb(209, 21, 0); width:100%;">
+											{{message}}
+										</div>
+									{% endif %}
+									{% if message.tags == 'success' %}
+										<div class = "alert alert-success ml-3 mt-4 text-dark" style = "color:rgb(0, 146, 0); width:100%;">
+											{{message}}
+										</div>
+									{% endif %}
+								{%endfor %}
+							</div>
+						</div>	              
+						{% endif %}
+					</form>
+				  </div>
+				</div>
+			  </div>		  
+		  </div>
+
+		</section>
+		<!-- /.content -->
+	  </div>
+  </div>
+  <!-- /.content-wrapper -->
+ 
+
+  {% endblock content %}
+
+
+  {% block scripts %}
+  
+  {% endblock scripts %}

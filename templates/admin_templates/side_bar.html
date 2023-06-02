@@ -1,0 +1,81 @@
+ {% load static %}
+
+<!-- side bar starts here  -->
+<aside class="main-sidebar">
+        
+    <!-- sidebar-->
+    <section class="sidebar position-relative">
+        <div class="user-profile bb-1 px-20 py-10">
+            <div class="d-block text-center">			
+                <div class="image">
+                    <img src="{% static 'assets/images/avatar/admin-pic2.jpeg' %}" class="avatar avatar-xxl bg-primary-light rounded100" alt="User Image">
+                </div>
+                <div class="info pt-15">
+                    <a class="px-20 fs-18 fw-500" href="#"> CEO <b>Sematos</b> </a>
+                </div>
+            </div>
+            <ul class="list-inline profile-setting mt-20 mb-0 d-flex justify-content-center gap-3">
+                <li><a href="{% url 'logout' %}" data-bs-toggle="tooltip" title="Logout"><i class="icon-Lock-overturning fs-24"><span class="path1"></span><span class="path2"></span></i></a></li>
+            </ul>
+        </div>
+        <div class="multinav">
+            <div class="multinav-scroll" style="height: 100%;">	
+                <!-- sidebar menu-->
+                <ul class="sidebar-menu" data-widget="tree">
+
+                    <li>
+                        <a href="{% url 'admin-dashboard' %}">
+                        <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
+                        <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- <li>
+                        <a href="{% url 'add-company' %}">
+                        <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
+                        <span>Create Company</span>
+                        </a>
+                    </li> -->
+                    
+                    <li>
+                        <a href="{% url 'admin-contact' company.id %}">
+                        <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
+                        <span>Contact Details</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="{% url 'admin-about-details' company.id %} ">
+                        <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
+                        <span>About Details</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'admin-messages' %}">
+                        <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
+                        <span>Messages</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'admin-list' %}">
+                        <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
+                        <span>Lists</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'admin-leads' %}">
+                        <i class="icon-Layout-4-blocks"><span class="path1"></span><span class="path2"></span></i>
+                        <span>Leads</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </section>
+</aside>
